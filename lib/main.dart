@@ -52,6 +52,37 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     double boardWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: MainColor.primaryColor,
+        child: ListView(
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            // ignore: prefer_const_constructors
+            UserAccountsDrawerHeader(
+              accountName: const Text("Vishwa Karthik"),
+              accountEmail: const Text("vishwa.prarthana@gmail.com"),
+              currentAccountPicture: const CircleAvatar(
+                child: Icon(
+                  Icons.featured_video_sharp,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          'Tic Tac Toe',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 25.0,
+          ),
+        ),
+        backgroundColor: MainColor.secondaryColor,
+      ),
       backgroundColor: MainColor.primaryColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -64,7 +95,6 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(
             height: 20.0,
           ),
-          // ignore: sized_box_for_whitespace
           Container(
             width: boardWidth,
             height: boardWidth,
